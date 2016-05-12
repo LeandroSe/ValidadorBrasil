@@ -1,0 +1,21 @@
+{
+    "name": "leandrose/validador-brasil",
+    "description": "Validadores de CPF, CNPJ, IE, RG, etc",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LeandroSe\\ValidadorBrasil\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "LeandroSe",
+            "email": "leandro@tsujiguchi.com.br"
+        }
+    ],
+    "minimum-stability": "dev"
+}
