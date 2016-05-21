@@ -23,10 +23,15 @@ class IE
             return true;
         } else {
             $uf = strtoupper($uf);
-            $ie = ereg_replace('[()-./,:]', '', $ie);
+            $ie2 = '';
+            for ($i = 0; $i < strlen($ie); $i++) {
+                if (is_numeric($ie[$i])) {
+                    $ie2 .= $ie[$i];
+                }
+            }
 
             $fnc = 'ie' . $uf;
-            return IE::$fnc($ie);
+            return IE::$fnc($ie2);
         }
     }
 
