@@ -3,7 +3,7 @@
     "description": "Validadores de CPF, CNPJ, IE, RG, etc",
     "type": "library",
     "require": {
-        "php": "^5.5.9"
+        "php": ">=5.5.9"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
@@ -20,5 +20,5 @@
             "email": "leandro@tsujiguchi.com.br"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
