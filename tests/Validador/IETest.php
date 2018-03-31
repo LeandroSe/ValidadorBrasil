@@ -2,7 +2,9 @@
 
 namespace LeandroSe\ValidadorBrasil\Validador;
 
-class IETest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class IETest extends TestCase
 {
 
     public function testIsento()
@@ -21,7 +23,7 @@ class IETest extends \PHPUnit_Framework_TestCase
             '0100482300112', '0130060268601', '0145712630380',
             '0102433270708', '0134563371235', '0103099446082',
             '0180481726610', '0197561767520', '0164863457650',
-            '0141254633246', '0179133595693', '0195995285414'
+            '0141254633246', '0179133595693', '0195995285414',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'AC'), $i);
@@ -39,7 +41,7 @@ class IETest extends \PHPUnit_Framework_TestCase
         $arr = [
             '01.299.057/387-01', '01.299.057/387-20', '01.004.823/001-13',
             '0100482300142', '0130060268611', '0145712630342',
-            '014571263034'
+            '014571263034',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'AC'), $i);
@@ -54,7 +56,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     {
         $arr = [
             '240000048', '248679937', '248878255', '248831658', '248004069',
-            '248479130'
+            '248479130',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'AL'), $i);
@@ -84,7 +86,7 @@ class IETest extends \PHPUnit_Framework_TestCase
             '030123459', '033221863', '039983625', '030000012',
             '030170011', '030190231', '033157740', '037665332',
             '038005336', '033418519', '030641004', '034642536',
-            '030187861'
+            '030187861',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'AP'), $i);
@@ -184,7 +186,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIECE()
     {
         $arr = [
-            '678923400', '199608024', '054657717', '707335663', '688335160'
+            '678923400', '199608024', '054657717', '707335663', '688335160',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'CE'), $i);
@@ -198,7 +200,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIECEFalha()
     {
         $arr = [
-            '678923401', '0199608024'
+            '678923401', '0199608024',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'CE'), $i);
@@ -212,7 +214,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEDF()
     {
         $arr = [
-            '0726137800167', '0736681100104', '0779072200196', '0712091600110', '0764631100130'
+            '0726137800167', '0736681100104', '0779072200196', '0712091600110', '0764631100130',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'DF'), $i);
@@ -226,7 +228,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEDFFalha()
     {
         $arr = [
-            '0726137800166', '0726137800177', '0826137800167', '072613780016'
+            '0726137800166', '0726137800177', '0826137800167', '072613780016',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'DF'), $i);
@@ -240,7 +242,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEES()
     {
         $arr = [
-            '286963680', '591962624', '418738599', '913400750', '426033531', '999999990'
+            '286963680', '591962624', '418738599', '913400750', '426033531', '999999990',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'ES'), $i);
@@ -254,7 +256,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEESFalha()
     {
         $arr = [
-            '286963681', '28696368', '296963680', '086963680'
+            '286963681', '28696368', '296963680', '086963680',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'ES'), $i);
@@ -273,7 +275,7 @@ class IETest extends \PHPUnit_Framework_TestCase
             '101178141', '101178281', '101178311', '101178451', '101178591', // PERIODO
             '101200200', '101200340', '101200480', '101200510', '101200650', // FORA PERIODO
             '111444780', '158190661', '156656884', '103439293', '108084299', '156564947',
-            '102058920', '151449490', '119126010', '106121901', '112539491', '118443291'
+            '102058920', '151449490', '119126010', '106121901', '112539491', '118443291',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'GO'), $i);
@@ -287,7 +289,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEGOFalha()
     {
         $arr = [
-            '101178351', '101178310', '121178311', '12117831'
+            '101178351', '101178310', '121178311', '12117831',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'GO'), $i);
@@ -316,7 +318,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEMAFalha()
     {
         $arr = [
-            '120000386', '130000385', '12000038'
+            '120000386', '130000385', '12000038',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'MA'), $i);
@@ -332,7 +334,7 @@ class IETest extends \PHPUnit_Framework_TestCase
         $arr = [
             '86073496283', '04250808300', '94562544958', '44314410963',
             '68489688615', '38975952142', '37072032617', '66343877891',
-            '79575006700', '62678514380', '30764350180', '07484745490'
+            '79575006700', '62678514380', '30764350180', '07484745490',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'MT'), $i);
@@ -346,7 +348,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEMTFalha()
     {
         $arr = [
-            '86073496282', '86073496253', '8607349628'
+            '86073496282', '86073496253', '8607349628',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'MT'), $i);
@@ -362,7 +364,7 @@ class IETest extends \PHPUnit_Framework_TestCase
         $arr = [
             '282349790', '287533581', '288926412', '280345143',
             '285901494', '283442905', '284979856', '287073807',
-            '286659018', '284882909', '281370150'
+            '286659018', '284882909', '281370150',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'MS'), $i);
@@ -376,7 +378,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEMSFalha()
     {
         $arr = [
-            '282349791', '28234979', '292349790', '452349790'
+            '282349791', '28234979', '292349790', '452349790',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'MS'), $i);
@@ -407,7 +409,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEMGFalha()
     {
         $arr = [
-            '9234877651031', '9234877651010', '923487765103', '0234877651030'
+            '9234877651031', '9234877651010', '923487765103', '0234877651030',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'MG'), $i);
@@ -437,7 +439,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEPAFalha()
     {
         $arr = [
-            '161602000', '151602001', '155981628', '15598162'
+            '161602000', '151602001', '155981628', '15598162',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'PA'), $i);
@@ -453,7 +455,7 @@ class IETest extends \PHPUnit_Framework_TestCase
         $arr = [
             '416071210', '561839271', '368009122', '853610223',
             '578110784', '801377285', '844381926', '830188657',
-            '990074218', '280173059', '219850941', '951834720'
+            '990074218', '280173059', '219850941', '951834720',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'PB'), $i);
@@ -467,7 +469,7 @@ class IETest extends \PHPUnit_Framework_TestCase
     public function testIEPBFalha()
     {
         $arr = [
-            '41607121', '416071211'
+            '41607121', '416071211',
         ];
         foreach ($arr as $i) {
             $this->assertFalse(IE::validar($i, 'PB'), $i);
@@ -543,7 +545,7 @@ class IETest extends \PHPUnit_Framework_TestCase
         $arr = [
             '464617880', '431525161', '397923112', '682352063',
             '528862464', '198454805', '248755846', '116869577',
-            '429529678', '428904939', '063999420'
+            '429529678', '428904939', '063999420',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'PI'), $i);
@@ -603,7 +605,7 @@ class IETest extends \PHPUnit_Framework_TestCase
         $arr = [
             '2074749880', '2026593051', '2059927552', '2006543733',
             '2088745254', '2043510355', '2086335806', '2053495367',
-            '2054896748', '2025735359', '2030857840'
+            '2054896748', '2025735359', '2030857840',
         ];
         foreach ($arr as $i) {
             $this->assertTrue(IE::validar($i, 'RN'), $i);
