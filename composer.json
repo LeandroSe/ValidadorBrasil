@@ -3,7 +3,7 @@
     "description": "Validadores de CPF, CNPJ e IE",
     "type": "library",
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.0",
         "laravel/framework": "5.5.*"
     },
     "require-dev": {
